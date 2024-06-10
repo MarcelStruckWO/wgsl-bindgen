@@ -1078,7 +1078,7 @@ fn main(@builtin(global_invocation_id) id: vec3<u32>) {
                 wgpu::naga::valid::Capabilities::all(),
             )
             .validate(&module)
-            .unwrap();
+            .expect("failed to validate naga module");
         let shader_string = wgpu::naga::back::wgsl::write_string(
                 &module,
                 &info,
@@ -1157,7 +1157,7 @@ fn main(@builtin(global_invocation_id) id: vec3<u32>) {
                 wgpu::naga::valid::Capabilities::all(),
             )
             .validate(&module)
-            .unwrap();
+            .expect("failed to validate naga module");
         let shader_string = wgpu::naga::back::wgsl::write_string(
                 &module,
                 &info,
@@ -1489,7 +1489,7 @@ fn fs_main(in_1: VertexOutput) -> @location(0) vec4<f32> {
                 wgpu::naga::valid::Capabilities::all(),
             )
             .validate(&module)
-            .unwrap();
+            .expect("failed to validate naga module");
         let shader_string = wgpu::naga::back::wgsl::write_string(
                 &module,
                 &info,
@@ -1540,7 +1540,7 @@ fn fs_main(in_1: VertexOutput) -> @location(0) vec4<f32> {
                 wgpu::naga::valid::Capabilities::all(),
             )
             .validate(&module)
-            .unwrap();
+            .expect("failed to validate naga module");
         let shader_string = wgpu::naga::back::wgsl::write_string(
                 &module,
                 &info,

@@ -482,7 +482,7 @@ impl<'a, 'b> ComposeShaderModuleBuilder<'a, 'b> {
           wgpu::naga::valid::Capabilities::all(),
         )
         .validate(&module)
-        .unwrap();
+        .expect("failed to validate naga module");
 
         // Write to wgsl
         let shader_string = wgpu::naga::back::wgsl::write_string(
